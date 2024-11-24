@@ -1,14 +1,18 @@
 public class Habitacion {
     private int numero;
     private int personas;
-    private TipoHabitacion tipoHabitacion;
     private double precioPorNoche;
     private boolean disponible;
 
-    public Habitacion(int numero, int personas) {
+    public Habitacion(int numero, int personas, double precioPorNoche) {
         this.numero = numero;
         this.disponible = true;
         this.personas = personas;
+        this.precioPorNoche = precioPorNoche;
+    }
+
+    public double getPrecioPorNoche() {
+        return precioPorNoche;
     }
 
     public int getNumero() {
@@ -33,5 +37,12 @@ public class Habitacion {
 
     public void setPersonas(int personas) {
         this.personas = personas;
+    }
+
+    @Override
+    public String toString() {
+        return "Numero de Habitacion: " + numero +
+                "\nCantidad de personas: " + personas +
+                "\nPrecio por noche: " + precioPorNoche;
     }
 }
